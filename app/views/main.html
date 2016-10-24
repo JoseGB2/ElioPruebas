@@ -1,0 +1,62 @@
+<div class="jumbotron">
+  <button class="btn" id ="screen">Get screenshot </button>
+  <iframe src="" id="api-frame" allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" width="500px" height="500px"></iframe>
+</div>
+
+<div class="row marketing">
+  <h4>HTML5 Boilerplate</h4>
+  <p>
+    HTML5 Boilerplate is a professional front-end template for building fast, robust, and adaptable web apps or sites.
+  </p>
+
+  <h4>Angular</h4>
+  <p>
+    AngularJS is a toolset for building the framework most suited to your application development.
+  </p>
+
+  <h4>Karma</h4>
+  <p>Spectacular Test Runner for JavaScript.</p>
+</div>
+<script type="text/javascript">
+  var iframe = document.getElementById( 'api-frame' );
+  var version = '1.0.0';
+  var urlid = '7w7pAfrCfjovwykkEeRFLGw5SXS';
+  var client = new Sketchfab( version, iframe );
+
+  client.init( urlid, {
+    success: function onSuccess( api ){
+      document.getElementById('screen').addEventListener('click',function(){
+        api.getScreenShot('image/png', function(err, result){
+          var image_data = atob(result.split(',')[1]);
+          var arraybuffer = new ArrayBuffer(image_data.length);
+          var view = new Uint8Array(arraybuffer);
+          for (var i = 0; i < image_data.length; i++) {
+            view[i] = image_data.charCodeAt(i) & 0xff;
+          }
+          var blob = new Blob([arraybuffer], {
+            type: 'image/png'
+          });
+
+          var hasSaveAs = !!window.saveAs;
+
+          if (hasSaveAs) {
+            saveAs(blob, 'name');
+          } else {
+            var url = (window.webkitURL || window.URL).createObjectURL(blob);
+            link = document.createElement('a');
+            link.setAttribute('href', url);
+            link.setAttribute('download', 'none');
+            link.click();
+          }
+        })
+      });
+
+    },
+    error: function onError() {},
+    camera:0,
+    transparent:0,
+    scrollwheel:0,
+    ui_controls:0,
+    ui_infos:0
+  } );
+</script>

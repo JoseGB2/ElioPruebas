@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Unity WebGL Player | ElioDemo</title>
+    <link rel="stylesheet" href="TemplateData/style.css">
+    <link rel="shortcut icon" href="TemplateData/favicon.ico" />
+    <script src="TemplateData/UnityProgress.js"></script>
+    <script type="text/javascript" src="Message.js"></script>
+  </head>
+  <body>
+
+    <div class="template">
+      <p class="header"><span>Unity WebGL Player | </span>ElioDemo</p>
+      <div class="template-wrap clear">
+        <canvas class="emscripten" id="canvas" oncontextmenu="event.preventDefault()" height="300px" width="460px" style="margin-left: 20%"></canvas>
+      </div>
+    </div>
+
+    <button type="button" name="button" onclick="btn('0.20:0.29:0.61:0.91')">Azul</button><br>
+    <button type="button" name="button" onclick="btn('0.69:0.23:0.42:0.91')">Morado</button><br>
+    <button type="button" name="button" onclick="btn('0.83:0.70:0.61:0.91')">puerquito</button><br>
+    <button type="button" name="button" onclick="btn('0.83:0.87:0.38:0.91')">Amarillo</button><br>
+    <button type="button" name="button" onclick="btn('0.83:0.18:0.38:0.91')">Rosa</button><br>
+    <button type="button" name="button" onclick="btn('0.47:0.38:0.12:0.91')">Marron</button><br>
+    <button type="button" name="button" onclick="btn('0.79:0.87:0.56:0.91')">verde</button><br>
+    <input type="text " name="name" value="">
+
+    <script type='text/javascript'>
+      var Module = {
+        TOTAL_MEMORY:100000200,
+        errorhandler: null,			// arguments: err, url, line. This function must return 'true' if the error is handled, otherwise 'false'
+        compatibilitycheck: null,
+        dataUrl: "Release/Builts.data",
+        codeUrl: "Release/Builts.js",
+        memUrl: "Release/Builts.mem",
+
+      };
+      ///morado "0.69:0.23:0.42:0.91"
+    </script>
+<script src="Release/UnityLoader.js"></script>
+
+  </body>
+</html>
