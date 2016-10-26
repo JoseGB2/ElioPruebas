@@ -8,12 +8,16 @@
  * Controller of the sketchFabApp
  */
 angular.module('sketchFabApp')
-  .controller('Webglctrl', function () {
+  .controller('Webglctrl', function ($http) {
 
-    this.awesomeThings = [
-      'HTML5 Boilerplate',
-      'AngularJS',
-      'Karma'
-    ];
+      var vm=this;
+
+      vm.callMethod=function(){
+        $http.post("http://localhost/gitJaguar/elio_motors_backend/public/saveImage").then(function(response){
+          console.log("esta entrando al response");
+          console.log(response.data);
+
+        });
+      };
 
   });
