@@ -34,7 +34,7 @@ angular
           templateUrl:'views/iFrame.html'
 
         })
-        .when('/in',{
+        .when('/inmdmd',{
            templateUrl:'Builts/index.html'
          })
       .otherwise({

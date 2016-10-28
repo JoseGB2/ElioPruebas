@@ -1,14 +1,22 @@
 <div class="row">
-    <div class="col-md-6">
+    <div class="col-md-3">
+        <ul class="list-group">
+            <input class="list-group-item input-sm" type="text" value="some value">
+            <li class="list-group-item btn btn-default" ng-click="gl.btn()" >change color</li>
+            <li class="list-group-item btn btn-default" ng-click="gl.screenShoot()">take screenShot</li>
+            <li class="list-group-item btn btn-default">Button php</li>
+            <li class="list-group-item btn btn-default" ng-click="gl.setOriginal()"> Original Position</li>
+            <li class="list-group-item btn btn-default" ng-click="gl.show()">show & hide</li>
+            <li class="list-group-item btn btn-default" ng-click="gl.scene('night')">night scene</li>
+            <li class="list-group-item btn btn-default" ng-click="gl.scene('day')">day scene</li>
+        </ul>
+
+
+    </div>
+    <div class="col-md-8">
         <canvas class="emscripten" id="canvas" oncontextmenu="event.preventDefault()" height="400px" width="760px"></canvas>
     </div>
 </div>
-<input type="text" |>
-<button onclick="btn('0.20:0.29:0.61:0.91')" >btn Click</button>
-<button onclick="screenShoot()">take screenShot</button>
-<button ng-click="gl.callMethod()">Button php</button>
-<button onclick="setOriginal()"> Original Position</button>
-
 <script type='text/javascript'>
     var Module = {
         TOTAL_MEMORY:100000200,
